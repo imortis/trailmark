@@ -70,7 +70,7 @@ touches zero on its own. On Django, learning from five thousand merges made no
 difference at all. We report that too."
 
 "We also caught a bug this way. An online re-weighting step made the curve dip
-17 points before it recovered. We switched it off by default and kept it in the
+nearly 20 points before it recovered. We switched it off by default and kept it in the
 repo as an ablation. Every number, including what didn't work, is in the
 repository with per-task records."
 

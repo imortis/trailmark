@@ -47,7 +47,7 @@ merges are absorbed. On Django it doesn't move. Both are in the README.
 Honest bits, all in the repo:
 • the same tool on a plain store keeps most of the token saving; the graph adds
   fewer turns, more complete multi-file answers, and the learning
-• an online re-weighting step made learning dip 17 pts; switched off
+• an online re-weighting step made learning dip nearly 20 pts before recovering; switched off
 
 Try it: https://imortis.github.io/trailmark/
 Code: github.com/imortis/trailmark

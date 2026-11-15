@@ -48,7 +48,7 @@ class LearnConfig:
     use_experience: bool = True
     use_trails: bool = True
     # Online re-weighting of evidence. Off by default: on a fixed held-out set it
-    # made the learning curve dip 17 points before recovering, with no final gain
+    # made the learning curve dip nearly 20 points before recovering, with no final gain
     # (results/reef.curve.*.json). Kept as an ablation.
     use_policy: bool = False
     use_heat: bool = True
