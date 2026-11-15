@@ -464,62 +464,43 @@
   }
  },
  "learning_curve": {
-  "title": "Django, 848 SWE-bench issues, 2015-2023: all changed files in the top 5",
+  "title": "Reef, 41 held-out changes, re-scored as the graph absorbs merges: all changed files in the top 5",
   "buckets": [
-   "2015",
-   "2016",
-   "2017",
-   "2018",
-   "2019",
-   "2020",
-   "2021",
-   "2022",
-   "2023"
+   "0 merges",
+   "10 merges",
+   "20 merges",
+   "30 merges",
+   "40 merges",
+   "50 merges",
+   "60 merges"
   ],
   "rows": [
    {
+    "name": "Graph learning from merges",
+    "values": [
+     0.4634146341463415,
+     0.43902439024390244,
+     0.4634146341463415,
+     0.5121951219512195,
+     0.5121951219512195,
+     0.5121951219512195,
+     0.5365853658536586
+    ]
+   },
+   {
     "name": "Plain store (text only)",
     "values": [
-     0.5,
-     0.6666666666666666,
-     0.8333333333333334,
-     0.8823529411764706,
-     0.7708333333333334,
-     0.8222222222222222,
-     0.8022598870056498,
-     0.8435374149659864,
-     0.7974683544303798
-    ]
-   },
-   {
-    "name": "Graph frozen at 2015",
-    "values": [
-     0.5,
-     0.6666666666666666,
-     0.8333333333333334,
-     0.8823529411764706,
-     0.7760416666666666,
-     0.8177777777777778,
-     0.8022598870056498,
-     0.8231292517006803,
-     0.8227848101265823
-    ]
-   },
-   {
-    "name": "Graph learning from every merge",
-    "values": [
-     0.5,
-     0.6666666666666666,
-     0.8333333333333334,
-     0.8235294117647058,
-     0.7916666666666666,
-     0.8355555555555556,
-     0.7853107344632768,
-     0.8367346938775511,
-     0.7848101265822784
+     0.4634146341463415,
+     0.4634146341463415,
+     0.4634146341463415,
+     0.4634146341463415,
+     0.4634146341463415,
+     0.4634146341463415,
+     0.4634146341463415
     ]
    }
-  ]
+  ],
+  "footnote": "On Django (848 issues, 5,632 merges absorbed) learning made no difference: 80.9% learning, 80.7% frozen, 80.8% plain store."
  },
  "note": "Reef was created after the model's training cutoff. The graph was built from the code 200 commits back; tasks are later commits in date order. In the learning condition the graph is told each task's real outcome before the next task.",
  "stream": {

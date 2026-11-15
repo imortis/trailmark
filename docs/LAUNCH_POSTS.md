@@ -2,8 +2,8 @@
 
 Post from your own accounts. Tag HydraDB: **@hydra_db** on X (from their GitHub
 profile). On LinkedIn, type "@HydraDB" and pick the company page from the list.
-Attach the demo GIF or a screenshot of the three-column comparison. Replace
-`<SPACE_URL>` with the live link.
+Attach `docs/demo.png` (the three-column comparison) or a short screen recording of the demo. Replace
+`https://imortis.github.io/trailmark/` with the live link.
 
 The organisers also want to see "who wants it". Things that count, and are
 honest: replies from people who say they'd use it, GitHub stars, someone
@@ -49,7 +49,7 @@ Honest bits, all in the repo:
   fewer turns, more complete multi-file answers, and the learning
 • an online re-weighting step made learning dip 17 pts; switched off
 
-Try it: <SPACE_URL>
+Try it: https://imortis.github.io/trailmark/
 Code: github.com/imortis/trailmark
 
 ---
@@ -80,7 +80,7 @@ Who I think pays for this: teams running background agents on tickets, and
 agent products whose margin is token cost. If that's you, I'd like to hear how
 you'd use it.
 
-Live demo: <SPACE_URL>
+Live demo: https://imortis.github.io/trailmark/
 Code and every per-task result: github.com/imortis/trailmark
 
 #AIagents #DeveloperTools #GraphDatabase #HydraDB

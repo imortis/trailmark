@@ -160,6 +160,31 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"error": f"{type(e).__name__}: {e}"}, 500)
 
 
+def export_static(demo: "Demo", out: Path) -> Path:
+    """Write a self-contained page with every held-out change answered in advance.
+
+    For hosts that serve static files only. The page is the live page plus a
+    small shim that answers its API calls from embedded data.
+    """
+    results = {t["text"]: demo.locate(t["text"]) for t in demo.tasks}
+    data = {"info": demo.info(), "tasks": demo.tasks, "results": results}
+    shim = (
+        "<script>const STATIC=" + json.dumps(data).replace("</", "<\\/") + ";"
+        "const _fetch=window.fetch;window.fetch=async(url,opt)=>{const r=b=>({json:async()=>b});"
+        "if(url==='/api/info')return r(STATIC.info);if(url==='/api/tasks')return r(STATIC.tasks);"
+        "if(url==='/api/locate'){const t=JSON.parse(opt.body).text.trim();"
+        "return r(STATIC.results[t]||{error:'This always-on copy answers the listed changes, precomputed by the live system. "
+        "To try your own text, run Trailmark (see the repository).'})}return _fetch(url,opt)};</script>"
+    )
+    page = PAGE.replace("<script>\nconst $=", shim + "\n<script>\nconst $=", 1)
+    page = page.replace("Below, the same question is answered by three stores at once, on changes none of them has seen.",
+                        "Below, the same question is answered by three stores at once, on changes none of them has seen. "
+                        "This always-on copy shows answers precomputed by the live system (HydraDB running); the repository runs it live.")
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "index.html").write_text(page, encoding="utf-8")
+    return out / "index.html"
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--name", required=True)
@@ -171,8 +196,12 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--summary", default="results/summary.json")
     p.add_argument("--host", default="127.0.0.1")
     p.add_argument("--port", type=int, default=7860)
+    p.add_argument("--export", help="write a static copy of the demo to this directory and exit")
     args = p.parse_args(argv)
     Handler.demo = Demo(args)
+    if args.export:
+        print(f"wrote {export_static(Handler.demo, Path(args.export))}")
+        return 0
     server = ThreadingHTTPServer((args.host, args.port), Handler)
     print(f"Trailmark demo on http://{args.host}:{args.port}", flush=True)
     server.serve_forever()
@@ -182,6 +211,7 @@ def main(argv: list[str] | None = None) -> int:
 PAGE = r"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trailmark · live demo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27%231f6f5c%27/%3E%3Cpath d=%27M9 22l5-12 4 7 5-5%27 stroke=%27white%27 stroke-width=%273%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
 <style>
 :root{--bg:#f7f6f2;--card:#fff;--ink:#1c1b19;--mute:#6b675f;--line:#e2ded4;--accent:#1f6f5c;--good:#17804f;--goodbg:#e3f4ea;--warn:#a2551a;--code:#f1efe8}
 @media (prefers-color-scheme:dark){:root{--bg:#161614;--card:#1f1f1c;--ink:#ecebe6;--mute:#a09c92;--line:#33322d;--accent:#5fc7ad;--good:#6fd39a;--goodbg:#1d3528;--warn:#e0a26b;--code:#282723}}
@@ -287,8 +317,8 @@ function results(){
   const a=s.agent, rows=[["Search tools only",a.baseline],["Trailmark tool, graph switched off",a.flat],["Trailmark on HydraDB",a.graph],["Trailmark on HydraDB, learning",a.learning]].filter(r=>r[1]);
   let h=`<b>An agent (${esc(a.model)}) naming the files a change needs, ${a.tasks} tasks, unseen repository</b><table><tr><th></th><th>All files found</th><th>Tokens / task</th><th>Turns / task</th></tr>`+
     rows.map(([n,r])=>`<tr><td>${n}</td><td>${pct(r.all_found)}</td><td>${num(r.tokens)}</td><td>${r.turns.toFixed(1)}</td></tr>`).join("")+`</table>`;
-  if(s.learning_curve){const c=s.learning_curve;h+=`<p style="margin:16px 0 6px"><b>Does it keep improving?</b> ${esc(c.title||"All files found, by position in the task stream")}</p><table><tr><th></th>${c.buckets.map(b=>`<th>${esc(b)}</th>`).join("")}</tr>`+c.rows.map(r=>`<tr><td>${esc(r.name)}</td>${r.values.map(v=>`<td>${pct(v)}</td>`).join("")}</tr>`).join("")+`</table>`}
-  $("#results").innerHTML=h+`<p class="note">${esc(s.note||"")} Learning table: each issue is scored at its own date; the learning graph has absorbed every commit merged before it, the frozen graph has not.</p>`;
+  if(s.learning_curve){const c=s.learning_curve;h+=`<p style="margin:16px 0 6px"><b>Does it keep improving?</b> ${esc(c.title||"All files found, by position in the task stream")}</p><table><tr><th></th>${c.buckets.map(b=>`<th>${esc(b)}</th>`).join("")}</tr>`+c.rows.map(r=>`<tr><td>${esc(r.name)}</td>${r.values.map(v=>`<td>${pct(v)}</td>`).join("")}</tr>`).join("")+`</table>`+(c.footnote?`<p class="note">${esc(c.footnote)}</p>`:"")}
+  $("#results").innerHTML=h+`<p class="note">${esc(s.note||"")}</p>`;
 }
 boot();
 </script></body></html>

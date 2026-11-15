@@ -122,15 +122,23 @@ def main(argv: list[str] | None = None) -> int:
             f = results / f"{name}.curve.{variant}.json"
             if f.exists():
                 summary.setdefault("curves", {}).setdefault(repo, {})[variant] = json.loads(f.read_text(encoding="utf-8"))
+    curve = summary.get("curves", {}).get("reef", {}).get("full")
     django_stream = summary.get("stream", {}).get("django")
-    if django_stream:
-        years = list(django_stream["by_year"])
-        names = {"plain": "Plain store (text only)", "frozen": "Graph frozen at 2015", "learning": "Graph learning from every merge"}
+    if curve:
+        points = [c for c in curve["checkpoints"] if c["taught"] % 10 == 0]
         summary["learning_curve"] = {
-            "title": f"Django, {django_stream['tasks']} SWE-bench issues, 2015-2023: all changed files in the top 5",
-            "buckets": years,
-            "rows": [{"name": names[n], "values": [django_stream["by_year"][y][n] for y in years]} for n in names],
+            "title": f"Reef, {curve['holdout']} held-out changes, re-scored as the graph absorbs merges: all changed files in the top 5",
+            "buckets": [f"{c['taught']} merges" for c in points],
+            "rows": [
+                {"name": "Graph learning from merges", "values": [c["acc"] for c in points]},
+                {"name": "Plain store (text only)", "values": [curve["plain"]] * len(points)},
+            ],
         }
+        if django_stream:
+            o = django_stream["overall"]
+            summary["learning_curve"]["footnote"] = (
+                f"On Django ({django_stream['tasks']} issues, {django_stream['stream_commits']:,} merges absorbed) learning made no "
+                f"difference: {o['learning']:.1%} learning, {o['frozen']:.1%} frozen, {o['plain']:.1%} plain store.")
     (results / "summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
 
     for label, s in (("Haiku", haiku), ("Sonnet", sonnet)):

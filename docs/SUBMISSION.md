@@ -5,7 +5,7 @@ Deadline: **9 AM IST, Nov 16, 2026**.
 | Requirement (from the organisers' FAQ) | Where it is | Status |
 |---|---|---|
 | Built on the open-source engine, run yourself | HydraDB OSS built from source at `af63440`, run locally and in the hosted container (`deploy/space/`) | done |
-| Live link | Hugging Face Space (see README header) | needs HF login, then `deploy/build_space.sh` + upload |
+| Live link | https://imortis.github.io/trailmark/ (always on; answers precomputed by the live system). Fully live: the tested container in `deploy/` (Hugging Face Docker hosting needs PRO) | done |
 | Open-source GitHub repo | https://github.com/imortis/trailmark (MIT) | push |
 | Loom walkthrough | script in `docs/LOOM_SCRIPT.md` | record |
 | Go-to-market: posts tagging HydraDB | drafts in `docs/LAUNCH_POSTS.md`; X handle `@hydra_db` | post |
@@ -21,5 +21,5 @@ Deadline: **9 AM IST, Nov 16, 2026**.
 ## Before recording the Loom
 
 1. Close memory-heavy apps (browser tabs, VS Code, Spotify): HydraDB gets stopped when memory runs out.
-2. Open the live link once so the Space is awake (startup takes about a minute).
+2. Open https://imortis.github.io/trailmark/ in a tab.
 3. Have the README results section and the repository open in tabs.

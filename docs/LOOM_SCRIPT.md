@@ -1,7 +1,7 @@
 # Loom walkthrough (about 4 minutes)
 
 Record screen and camera. Tabs to have open, in order:
-1. The live demo (Space link from the README header), already awake.
+1. The demo: https://imortis.github.io/trailmark/ (or the live version, if you run it locally with `python -m trailmark.web`).
 2. The GitHub README, scrolled to "Results".
 3. A terminal in the repository (optional, for one command).
 
@@ -18,7 +18,8 @@ walking a graph of the codebase, and the graph learns from every merged change."
 ## 0:25–1:30  Live demo
 
 **Do:** in the demo, click a change in the left list (pick one with two or more
-answer files, for example a storage change).
+answer files; the sixth one, a dispatcher change touching three files, shows the
+learning graph moving the answers up).
 
 **Say:** "This is Reef, a repository created after the model's training cutoff.
 These changes were merged later than the snapshot the graph was built from, so
