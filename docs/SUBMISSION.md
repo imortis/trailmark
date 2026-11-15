@@ -6,7 +6,7 @@ Deadline: **9 AM IST, Nov 16, 2026**. The three required parts:
 |---|---|
 | Live app | https://imortis.github.io/trailmark/ |
 | Open-source GitHub repo | https://github.com/imortis/trailmark |
-| Video walkthrough (5 min) | https://imortis.github.io/trailmark/video.html |
+| Video walkthrough (6 min) | https://imortis.github.io/trailmark/video.html |
 
 Built on the open-source engine: HydraDB OSS built from source at
 `af6344037bffb2a354bf32c2b312ba4921a1583f`, run locally (WSL) and packaged in
@@ -48,4 +48,4 @@ Buyers: teams running background coding agents at volume and agent products whos
 ## Notes for the organisers, if a field asks
 
 - The always-on demo serves answers precomputed by the live system with HydraDB running. Hugging Face now requires a paid plan for Docker apps, so the fully live version is the tested container in `deploy/` (one command on any Docker host), or run locally with `python -m trailmark.web`.
-- The video is narrated with an offline text-to-speech voice.
+- The video is narrated with a neural text-to-speech voice (Indian English).

@@ -8,7 +8,7 @@ On a repository the model had never seen, an agent using Trailmark found the
 files a change needs with **38% fewer tokens and 45% fewer turns**, at the same
 accuracy (Claude Haiku, 101 real changes).
 
-**Demo:** https://imortis.github.io/trailmark/ · **Video walkthrough (5 min):** https://imortis.github.io/trailmark/video.html
+**Demo:** https://imortis.github.io/trailmark/ · **Video walkthrough (6 min):** https://imortis.github.io/trailmark/video.html
 
 The demo answers 41 real changes that none of the three stores has seen, side by side: text only, the HydraDB graph, and the graph after learning from merges. The always-on copy shows answers precomputed by the live system; to run it live with your own text, see [Run it](#run-it) or the container in `deploy/`.
 
