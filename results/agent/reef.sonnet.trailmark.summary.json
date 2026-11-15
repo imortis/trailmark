@@ -1,0 +1,87 @@
+{
+ "tasks": 20,
+ "conditions": {
+  "baseline": {
+   "first_file_correct": 1.0,
+   "all_files_found": 0.8,
+   "any_file_found": 1.0,
+   "tokens": {
+    "mean": 92784.0,
+    "median": 90291.0
+   },
+   "turns": {
+    "mean": 6.75,
+    "median": 6.0
+   },
+   "cost_usd": {
+    "mean": 0.074702775,
+    "median": 0.06978495000000001
+   },
+   "wall_s": {
+    "mean": 13.285,
+    "median": 11.9
+   }
+  },
+  "treatment": {
+   "first_file_correct": 0.9,
+   "all_files_found": 0.65,
+   "any_file_found": 0.95,
+   "tokens": {
+    "mean": 60069.2,
+    "median": 52778.5
+   },
+   "turns": {
+    "mean": 3.9,
+    "median": 3.0
+   },
+   "cost_usd": {
+    "mean": 0.067069265,
+    "median": 0.06108575000000001
+   },
+   "wall_s": {
+    "mean": 10.305,
+    "median": 9.0
+   }
+  }
+ },
+ "change": {
+  "tokens": {
+   "ratio": 0.6474090360406967,
+   "ci95": [
+    0.5052635370176392,
+    0.824623080050197
+   ],
+   "tasks_lower": 0.8
+  },
+  "turns": {
+   "ratio": 0.5777777777777777,
+   "ci95": [
+    0.43410852713178294,
+    0.7481481481481481
+   ],
+   "tasks_lower": 0.8
+  },
+  "cost_usd": {
+   "ratio": 0.8978149071436768,
+   "ci95": [
+    0.8223204514502902,
+    0.9778920311947111
+   ],
+   "tasks_lower": 0.7
+  },
+  "wall_s": {
+   "ratio": 0.7756868648852088,
+   "ci95": [
+    0.6721793458287394,
+    0.901115813774529
+   ],
+   "tasks_lower": 0.8
+  }
+ },
+ "all_found_table": {
+  "both": 13,
+  "baseline_only": 3,
+  "treatment_only": 0,
+  "neither": 4
+ }
+}

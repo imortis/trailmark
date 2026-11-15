@@ -1,0 +1,660 @@
+{
+ "name": "reef",
+ "k": 5,
+ "tasks": 101,
+ "stream_commits": 130,
+ "excluded_leaks": 0,
+ "overall": {
+  "plain": 0.48514851485148514,
+  "frozen": 0.5544554455445545,
+  "learning": 0.594059405940594
+ },
+ "by_year": {
+  "2026": {
+   "tasks": 101,
+   "plain": 0.48514851485148514,
+   "frozen": 0.5544554455445545,
+   "learning": 0.594059405940594
+  }
+ },
+ "by_third": [
+  {
+   "plain": 0.4411764705882353,
+   "frozen": 0.6176470588235294,
+   "learning": 0.6176470588235294
+  },
+  {
+   "plain": 0.6060606060606061,
+   "frozen": 0.6363636363636364,
+   "learning": 0.6666666666666666
+  },
+  {
+   "plain": 0.4117647058823529,
+   "frozen": 0.4117647058823529,
+   "learning": 0.5
+  }
+ ],
+ "learning_vs_frozen": {
+  "diff": 0.039603960396039604,
+  "lo": -0.009900990099009901,
+  "hi": 0.0891089108910891
+ },
+ "learning_vs_plain": {
+  "diff": 0.10891089108910891,
+  "lo": 0.039603960396039604,
+  "hi": 0.18811881188118812
+ },
+ "frozen_vs_plain": {
+  "diff": 0.06930693069306931,
+  "lo": 0.0,
+  "hi": 0.1485148514851485
+ },
+ "per_task": [
+  {
+   "key": "147f54b1d1a6",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "dd9de791bd22",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "a47f5218d7a4",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "ca91cc553c1f",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "0d83df43f7de",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "cfdd0a35bb6d",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "986a779e5351",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "76e384037cb8",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "7c3a516be5a6",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "065b6f72dca1",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "f5673ab9cdf9",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "bbc001ffeffd",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "b9905855d0ec",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "4d1ec1b3fb27",
+   "plain": false,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "fef5cc0067a9",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "e399b6bbfe68",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "3382df15cb82",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "aab5596f8ed8",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "dd4683334819",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "e1f860af552d",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "b278bfed0e2d",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "0aa2ae742240",
+   "plain": false,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "7494d6eb53c1",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "fb57d2b485f7",
+   "plain": false,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "bc2c3e8f130f",
+   "plain": false,
+   "frozen": true,
+   "learning": false
+  },
+  {
+   "key": "989a3dea4e7e",
+   "plain": false,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "fbd1229f864e",
+   "plain": false,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "c7f93b82ef16",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "83a6f3ab71ca",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "9956b214171a",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "4077278e6bd0",
+   "plain": false,
+   "frozen": false,
+   "learning": true
+  },
+  {
+   "key": "5ab30d08845c",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "99b85dc6ea37",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "db590a300855",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "92f6810fde54",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "cde19f96b17d",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "21dfa16f48e6",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "281c730a0f7a",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "2cc36233f514",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "286a3a2d116d",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "3ebd8f27fdc1",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "685746ecac97",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "3a6db13b657b",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "23872344a73a",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "6f5c43900d13",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "c73865e6ffa9",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "0cafc8cc095d",
+   "plain": true,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "f640f9427cda",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "b183083c187e",
+   "plain": false,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "9b4605df3ddd",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "6f148178d479",
+   "plain": false,
+   "frozen": false,
+   "learning": true
+  },
+  {
+   "key": "35516b569bde",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "363af772e1db",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "e0a4ed6d45e8",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "18b3c6f60db2",
+   "plain": false,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "e3c25307f984",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "98d87f797449",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "d434e6c81480",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "39a4c2ebcc49",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "9fd01852a72a",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "5637d0b096b5",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "4b33acbfaa04",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "26be075338aa",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "56cc578e745d",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "5c0225aa976e",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "f468d33a9964",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "ac65a7687b7f",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "c85700a6e21e",
+   "plain": false,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "41d7171ee913",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "0e3e7eea1fe0",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "46f5337241dd",
+   "plain": false,
+   "frozen": false,
+   "learning": true
+  },
+  {
+   "key": "74074623e7fe",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "5a1327dda10f",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "00f8d0e65c10",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "1f2061d33b0f",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "ab22a8311bb9",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "741ee3da1c38",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "51a7a6f9f3d4",
+   "plain": false,
+   "frozen": true,
+   "learning": false
+  },
+  {
+   "key": "63085319669d",
+   "plain": true,
+   "frozen": false,
+   "learning": true
+  },
+  {
+   "key": "3b373d1c2583",
+   "plain": false,
+   "frozen": false,
+   "learning": true
+  },
+  {
+   "key": "56b313b439b7",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "5d20f4d3a8f3",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "6906209406a1",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "e4a2fd9a902c",
+   "plain": true,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "4a93f41d8aff",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "4f1b029f9218",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "e128f167f709",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "fef9b4cb2226",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "f566f1f59e8a",
+   "plain": true,
+   "frozen": false,
+   "learning": true
+  },
+  {
+   "key": "b01b75b69c28",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "0a8824528624",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "5ab1ae2f2c66",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "6e163f497f41",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "e33deea9cac9",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "b5996e29bef1",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "a29af32bb4d3",
+   "plain": true,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "259f4ff95e73",
+   "plain": false,
+   "frozen": true,
+   "learning": true
+  },
+  {
+   "key": "386337b210bf",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "06d57310bf6d",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "cc14b43e9f3c",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  },
+  {
+   "key": "0d723262abb6",
+   "plain": false,
+   "frozen": false,
+   "learning": false
+  }
+ ]
+}

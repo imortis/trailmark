@@ -1,0 +1,16 @@
+{
+ "mcpServers": {
+  "trailmark": {
+   "command": "D:\\trailmark\\.venv\\Scripts\\python.exe",
+   "args": [
+    "-m",
+    "trailmark.mcp_server"
+   ],
+   "env": {
+    "TRAILMARK_WORKSPACE": "reef",
+    "TRAILMARK_HOME": "D:\\trailmark",
+    "TRAILMARK_FLAT": "1"
+   }
+  }
+ }
+}

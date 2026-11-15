@@ -1,0 +1,117 @@
+{
+ "name": "django-swe",
+ "variant": "full",
+ "k": 5,
+ "train": 648,
+ "holdout": 200,
+ "plain": 0.815,
+ "static": 0.82,
+ "checkpoints": [
+  {
+   "taught": 0,
+   "acc": 0.82
+  },
+  {
+   "taught": 81,
+   "acc": 0.83,
+   "vs_static": 0.01,
+   "ci95": [
+    0.0,
+    0.025
+   ]
+  },
+  {
+   "taught": 162,
+   "acc": 0.825,
+   "vs_static": 0.005,
+   "ci95": [
+    -0.01,
+    0.025
+   ]
+  },
+  {
+   "taught": 243,
+   "acc": 0.815,
+   "vs_static": -0.005,
+   "ci95": [
+    -0.03,
+    0.015
+   ]
+  },
+  {
+   "taught": 324,
+   "acc": 0.815,
+   "vs_static": -0.005,
+   "ci95": [
+    -0.025,
+    0.015
+   ]
+  },
+  {
+   "taught": 405,
+   "acc": 0.815,
+   "vs_static": -0.005,
+   "ci95": [
+    -0.025,
+    0.015
+   ]
+  },
+  {
+   "taught": 486,
+   "acc": 0.825,
+   "vs_static": 0.005,
+   "ci95": [
+    -0.015,
+    0.025
+   ]
+  },
+  {
+   "taught": 567,
+   "acc": 0.825,
+   "vs_static": 0.005,
+   "ci95": [
+    -0.02,
+    0.03
+   ]
+  },
+  {
+   "taught": 648,
+   "acc": 0.82,
+   "vs_static": 0.0,
+   "ci95": [
+    -0.03,
+    0.025
+   ]
+  }
+ ],
+ "final_vs_plain": {
+  "diff": 0.005,
+  "ci95": [
+   -0.025,
+   0.035
+  ]
+ },
+ "final_weights": {
+  "bm25": 1.0,
+  "title": 0.6,
+  "sym": 0.8,
+  "dense": 0.8,
+  "stem_title": 1.2,
+  "stem_text": 0.3,
+  "mention_path": 0.4,
+  "mention_name": 1.0,
+  "imports_out": 0.2,
+  "imports_in": 0.1,
+  "refs_out": 0.3,
+  "refs_in": 0.15,
+  "cochange": 0.4,
+  "trail": 0.8,
+  "sym_callee": 0.3,
+  "sym_caller": 0.15,
+  "sym_base": 0.2,
+  "sym_sub": 0.1,
+  "experience": 1.0,
+  "hot": 0.3,
+  "uses": 0.8
+ }
+}
