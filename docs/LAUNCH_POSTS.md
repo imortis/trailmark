@@ -40,8 +40,8 @@ plus every file that touches the names in the task.
 It keeps learning. Each merge adds task nodes, co-fix counts and trails (only
 where HydraDB's shortest-path finds a real route).
 
-On a fixed held-out set, the learned graph pulls ahead of the untaught graph and
-a plain store as merges accumulate.
+On a repo the model never saw, a fixed held-out set climbs from 46% to 54% as
+merges are absorbed. On Django it doesn't move. Both are in the README.
 
 **5/**
 Honest bits, all in the repo:
@@ -67,8 +67,9 @@ open-source engine, and that learns from every merged change.
 What I measured, on a repository created after the model's training cutoff
 (101 real changes, Claude Haiku):
 • 38% fewer tokens and 45% fewer turns per task, at the same accuracy
-• a fixed held-out benchmark where the learned graph pulls ahead of both a plain
-  store and the untaught graph as merges accumulate
+• a fixed held-out benchmark that climbs from 46% to 54% as the graph absorbs
+  merges, and a plain store that stays at 46% (on Django, learning made no
+  difference, and the write-up says so)
 • a control with the graph switched off, so the graph's own contribution is
   measured rather than assumed
 

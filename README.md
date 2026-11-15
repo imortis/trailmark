@@ -96,9 +96,9 @@ source files that must be modified. Conditions differ only in the tools.
 | Cost per task | $0.0076 | $0.0052 | −31% (−37% to −25%) |
 | Wall time per task | 18.2 s | 13.4 s | −26% |
 
-**Claude Sonnet, 39 tasks**
+**Claude Sonnet, 39 tasks** (learning condition, with the re-weighting step that was later switched off)
 
-| | Search tools only | With Trailmark (learning) | Change (95% interval) |
+| | Search tools only | With Trailmark | Change (95% interval) |
 |---|---|---|---|
 | All files found | 82.1% | 79.5% | −2.6 points (2 gained, 3 lost) |
 | Tokens per task | 128,100 | 118,200 | −8% (−30% to +19%), not significant |
@@ -201,15 +201,25 @@ task the graph is told which files the real change touched):
 
 | | Search only | Trailmark, frozen | Trailmark, learning |
 |---|---|---|---|
-| First 50 tasks: all files found | 78.0% | 82.0% | <L1> |
-| Last 51 tasks: all files found | 58.8% | 60.8% | <L2> |
-| Tokens per task (all 101) | 171,400 | 105,500 | <LT> |
+| First 50 tasks: all files found | 78.0% | 82.0% | 76.0% |
+| Last 51 tasks: all files found | 58.8% | 60.8% | 60.8% |
+| Last 51 tasks: tokens per task | 191,600 | 123,200 | 107,500 |
+| Last 51 tasks: turns per task | 11.3 | 6.5 | 5.7 |
 
-**What this adds up to.** On new code where changes span several files, learning
-improves results in all three designs, by 4–7 points, though each interval
-reaches zero on its own. On Django it does nothing: the graph starts with 8,368
-commits of history, and single-file fixes leave little for co-change to teach.
-We report both.
+Learning does not make the agent more complete. It makes it cheaper as it goes:
+in the second half, 13% fewer tokens (95% interval −26% to +4%) and 11% fewer
+turns (−22% to +1%) than the frozen graph. An earlier run with the re-weighting
+step switched on found all files on 66.7% of the last 51 tasks; that did not
+replicate once re-weighting was removed, so we do not claim it (both runs are in
+`results/agent-v3/`).
+
+**What this adds up to.** The learning effect is real in direction and modest in
+size. On new code where changes span several files, the learning graph ranks
+the right files higher than the frozen graph in both retrieval designs (+4 and
++7 points), and an agent using it spends fewer tokens late in the stream; every
+interval, taken alone, reaches zero. On Django learning does nothing: the graph
+starts with 8,368 commits of history, and single-file fixes leave little for
+co-change to teach. We report both rather than pick one.
 
 **A bug the curve caught.** An online re-weighting step (nudging how much each
 kind of evidence counts after every task) made the held-out curve drop 17

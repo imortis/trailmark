@@ -60,8 +60,13 @@ changes. The graph's real job is the next part."
 
 **Say:** "A fixed held-out set of changes, re-scored as the graph is taught more
 merges. Two baselines on the same set: a plain store, and the graph before any
-teaching. As merges accumulate, the learned graph pulls ahead, and it doesn't
-fall back."
+teaching. The learned graph climbs from 46 to 54 percent; the plain store stays
+at 46. And an agent using the learning graph spends 13 percent fewer tokens in
+the second half of the stream than one using the frozen graph."
+
+"I'll be straight about the size: these are modest effects and each interval
+touches zero on its own. On Django, learning from five thousand merges made no
+difference at all. We report that too."
 
 "We also caught a bug this way. An online re-weighting step made the curve dip
 17 points before it recovered. We switched it off by default and kept it in the
